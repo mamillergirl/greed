@@ -1,0 +1,5 @@
+/Users/marisamiller/GitHub/Projects/greed/obj/Debug/net6.0/greed.csproj.AssemblyReference.cache
+/Users/marisamiller/GitHub/Projects/greed/obj/Debug/net6.0/greed.GeneratedMSBuildEditorConfig.editorconfig
+/Users/marisamiller/GitHub/Projects/greed/obj/Debug/net6.0/greed.AssemblyInfoInputs.cache
+/Users/marisamiller/GitHub/Projects/greed/obj/Debug/net6.0/greed.AssemblyInfo.cs
+/Users/marisamiller/GitHub/Projects/greed/obj/Debug/net6.0/greed.csproj.CoreCompileInputs.cache

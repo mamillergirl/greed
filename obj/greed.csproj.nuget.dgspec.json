@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\owlbu\\Desktop\\GitHub\\greed\\greed.csproj": {}
+    "/Users/marisamiller/GitHub/Projects/greed/greed.csproj": {}
   },
   "projects": {
-    "C:\\Users\\owlbu\\Desktop\\GitHub\\greed\\greed.csproj": {
+    "/Users/marisamiller/GitHub/Projects/greed/greed.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\owlbu\\Desktop\\GitHub\\greed\\greed.csproj",
+        "projectUniqueName": "/Users/marisamiller/GitHub/Projects/greed/greed.csproj",
         "projectName": "greed",
-        "projectPath": "C:\\Users\\owlbu\\Desktop\\GitHub\\greed\\greed.csproj",
-        "packagesPath": "C:\\Users\\owlbu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\owlbu\\Desktop\\GitHub\\greed\\obj\\",
+        "projectPath": "/Users/marisamiller/GitHub/Projects/greed/greed.csproj",
+        "packagesPath": "/Users/marisamiller/.nuget/packages/",
+        "outputPath": "/Users/marisamiller/GitHub/Projects/greed/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\owlbu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/marisamiller/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }

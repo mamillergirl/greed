@@ -10,45 +10,46 @@ namespace HelloWorld
 
             var ScreenHeight = 480;
             var ScreenWidth = 800;
-            var Objects = new List<GameObject>();
+            var Objects = new List<rockobjects>();
             var Random = new Random();
 
-            Raylib.InitWindow(ScreenWidth, ScreenHeight, "GameObject");
+            Raylib.InitWindow(ScreenWidth, ScreenHeight, "rockobjects");
             Raylib.SetTargetFPS(60);
 
             while (!Raylib.WindowShouldClose())
             {
                 // Add a new random object to the screen every iteration of our game loop
-                var whichType = Random.Next(3);
+                var rocks = Random.Next(3);
 
                 // Generate a random velocity for this object
-                var randomY = Random.Next(-2, 2);
-                var randomX = Random.Next(-2, 2);
+                var randomY = Random.Next(-1, 1);
+                var randomX = Random.Next(-1, 1);
+                var randomXStart = Random.Next(ScreenWidth);
 
                 // Each object will start about the center of the screen
-                var position = new Vector2(ScreenWidth / 2, ScreenHeight / 2);
+                var position = new Vector2(randomXStart, 0);
 
-                switch (whichType) {
+                switch (rocks) {
                     case 0:
                         //daddy rock
-                        var square = new GameSquare(Color.RED, 15);
-                        square.Position = position;
-                        square.Velocity = new Vector2(randomX, randomY);
-                        Objects.Add(square);
+                        var rock = new DaddyRock();
+                        rock.Position = position;
+                        rock.Velocity = new Vector2(randomX, randomY);
+                        Objects.Add(rock);
                         break;
                     case 1:
                         //middle rock
-                        var square = new GameSquare(Color.YELLOW, 10);
-                        square.Position = position;
-                        square.Velocity = new Vector2(randomX, randomY);
-                        Objects.Add(square);
+                        var rock = new MiddleRock();
+                        rock.Position = position;
+                        rock.Velocity = new Vector2(randomX, randomY);
+                        Objects.Add(rock);
                         break;
                     case 2:
                         //baby rock
-                        var square = new GameSquare(Color.GREEN, 5);
-                        square.Position = position;
-                        square.Velocity = new Vector2(randomX, randomY);
-                        Objects.Add(square);
+                        var rock = new BabyRock();
+                        rock.Position = position;
+                        rock.Velocity = new Vector2(randomX, randomY);
+                        Objects.Add(rock);
                         break;
                     default:
                         break;
@@ -56,7 +57,7 @@ namespace HelloWorld
 
 
                 Raylib.BeginDrawing();
-                Raylib.ClearBackground(Color.BLACK);
+                Raylib.ClearBackground(Color.WHITE);
 
                 // Draw all of the objects in their current location
                 foreach (var obj in Objects) {
