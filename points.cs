@@ -22,6 +22,6 @@ class Points{
       if (Raylib.CheckCollisionRecs(player, GEM)){
           TotalPoints += gem1.Points;
       }
-      Raylib.DrawText($"{TotalPoints}")
+    Raylib.DrawText($"Points: {TotalPoints}", 12, 460, 20, Color.WHITE);
   }
   }

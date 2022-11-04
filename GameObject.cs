@@ -63,7 +63,7 @@ class BabyRock: ColoredObject {
 }
 class Gem: ColoredObject {
     public int Size { get; set; }
-    public int Points = 25
+    public int Points = 25;
 
     public Gem(Color color, int size): base(color) {
         Size = size;
