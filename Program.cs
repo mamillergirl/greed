@@ -10,46 +10,56 @@ namespace HelloWorld
 
             var ScreenHeight = 480;
             var ScreenWidth = 800;
-            var Objects = new List<rockobjects>();
+            var Objects = new List<GameObject>();
             var Random = new Random();
 
-            Raylib.InitWindow(ScreenWidth, ScreenHeight, "rockobjects");
-            Raylib.SetTargetFPS(60);
+            Raylib.InitWindow(ScreenWidth, ScreenHeight, "GameObject");
+            Raylib.SetTargetFPS(20);
 
             while (!Raylib.WindowShouldClose())
             {
                 // Add a new random object to the screen every iteration of our game loop
-                var rocks = Random.Next(3);
+                List<int> numbers = new List<int>()
+                {
+                    0,1, 1, 1 ,1,2, 2, 2, 2, 2,3, 3, 3, 3, 3, 3, 3,4, 4, 4,5,6,7,8,9,10
+                };
+                int randIndex = Random.Next(numbers.Count);
+                var whichType = numbers[randIndex];
 
                 // Generate a random velocity for this object
-                var randomY = Random.Next(-1, 1);
-                var randomX = Random.Next(-1, 1);
-                var randomXStart = Random.Next(ScreenWidth);
+                var randomY = Random.Next(0, 2);
+                var randomX = Random.Next(0, 2);
+                var randomXstart = Random.Next(ScreenWidth);
 
                 // Each object will start about the center of the screen
-                var position = new Vector2(randomXStart, 0);
+                var position = new Vector2(randomXstart, 0);
 
-                switch (rocks) {
+                switch (whichType) {
                     case 0:
-                        //daddy rock
-                        var rock = new DaddyRock();
-                        rock.Position = position;
-                        rock.Velocity = new Vector2(randomX, randomY);
-                        Objects.Add(rock);
+                        Console.WriteLine("Creating a square");
+                        var daddyRock = new DaddyRock(Color.RED, 30);
+                        daddyRock.Position = position;
+                        daddyRock.Velocity = new Vector2(randomX, randomY);
+                        Objects.Add(daddyRock);
                         break;
                     case 1:
-                        //middle rock
-                        var rock = new MiddleRock();
-                        rock.Position = position;
-                        rock.Velocity = new Vector2(randomX, randomY);
-                        Objects.Add(rock);
+                        Console.WriteLine("Creating a circle");
+                        var middleRock = new MiddleRock(Color.YELLOW, 20);
+                        middleRock.Position = position;
+                        middleRock.Velocity = new Vector2(randomX, randomY);
+                        Objects.Add(middleRock);
                         break;
                     case 2:
-                        //baby rock
-                        var rock = new BabyRock();
-                        rock.Position = position;
-                        rock.Velocity = new Vector2(randomX, randomY);
-                        Objects.Add(rock);
+                        var babyRock = new BabyRock(Color.GREEN, 30);
+                        babyRock.Position = position;
+                        babyRock.Velocity = new Vector2(randomX, randomY);
+                        Objects.Add(babyRock);
+                        break;
+                    case 3:
+                        var gem = new Gem(Color.GOLD, 20);
+                        gem.Position = position;
+                        gem.Velocity = new Vector2(randomX, randomY);
+                        Objects.Add(gem);
                         break;
                     default:
                         break;
@@ -57,7 +67,7 @@ namespace HelloWorld
 
 
                 Raylib.BeginDrawing();
-                Raylib.ClearBackground(Color.WHITE);
+                Raylib.ClearBackground(Color.BLACK);
 
                 // Draw all of the objects in their current location
                 foreach (var obj in Objects) {
@@ -76,3 +86,4 @@ namespace HelloWorld
         }
     }
 }
+
