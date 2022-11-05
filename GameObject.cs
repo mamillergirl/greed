@@ -33,9 +33,9 @@ class DaddyRock: ColoredObject {
     }
 
     override public void Draw() {
-        Raylib.DrawText("O",(int)Position.X, (int)Position.Y, Size, Color);
-    }
-}
+        Raylib.DrawRectangle((int)Position.X, (int)Position.Y, Size, Size, Color);
+    }    }
+
 class MiddleRock: ColoredObject {
     public int Size { get; set; }
     public int Points = -25;
@@ -45,8 +45,8 @@ class MiddleRock: ColoredObject {
     }
 
     override public void Draw() {
-        Raylib.DrawText("o",(int)Position.X, (int)Position.Y, Size, Color);
-    }
+        Raylib.DrawRectangle((int)Position.X, (int)Position.Y, Size, Size, Color);
+    }   
 }
 
 class BabyRock: ColoredObject {
@@ -58,8 +58,8 @@ class BabyRock: ColoredObject {
     }
 
     override public void Draw() {
-        Raylib.DrawText(".",(int)Position.X, (int)Position.Y, Size, Color);
-    }
+        Raylib.DrawRectangle((int)Position.X, (int)Position.Y, Size, Size, Color);
+    }   
 }
 class Gem: ColoredObject {
     public int Size { get; set; }
@@ -70,7 +70,8 @@ class Gem: ColoredObject {
     }
 
     override public void Draw() {
-        Raylib.DrawText("*",(int)Position.X, (int)Position.Y, Size, Color);
-    }
+        Raylib.DrawRectangle((int)Position.X, (int)Position.Y, Size, Size, Color);
+    }   
 }
+
 

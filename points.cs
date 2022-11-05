@@ -2,26 +2,26 @@ using Raylib_cs;
 using System.Numerics;
 
 class Points{
-    PlayerShape player = new PlayerShape;   
-    DaddyRock rock1 = new DaddyRock;
-    MiddleRock rock2 = new MiddleRock;
-    BabyRock rock3 = new BabyRock;
-    Gem gem1 = new Gems; 
+    Rectangle player = new Rectangle();
+    DaddyRock rock1 = new DaddyRock();
+    MiddleRock rock2 = new MiddleRock();
+    BabyRock rock3 = new BabyRock();
+    Gem gem1 = new Gem();
 
-  while(!Raylib.WindowShouldClose()){
+    public void checkCollisions(){
+    Raylib.DrawText($"Points: {TotalPoints}", 12, 460, 20, Color.WHITE);
       int TotalPoints = 300;
-      if (Raylib.CheckCollisionRecs(player, rock1)){
+      if (Raylib.CheckCollisionRecs(Rectangle, DaddyRock)){
           TotalPoints += rock1.Points;
       }
-      if (Raylib.CheckCollisionRecs(player, rock2)){
+      if (Raylib.CheckCollisionRecs(Rectangle, MiddleRock)){
           TotalPoints += rock2.Points;
       }
-      if (Raylib.CheckCollisionRecs(player, rock3)){
+      if (Raylib.CheckCollisionRecs(Rectangle, BabyRock)){
           TotalPoints += rock3.Points;
       }
-      if (Raylib.CheckCollisionRecs(player, GEM)){
+      if (Raylib.CheckCollisionRecs(Rectangle, Gem)){
           TotalPoints += gem1.Points;
       }
-    Raylib.DrawText($"Points: {TotalPoints}", 12, 460, 20, Color.WHITE);
   }
   }
