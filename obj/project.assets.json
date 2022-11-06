@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/Users/marisamiller/.nuget/packages/": {}
+    "C:\\Users\\maris\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/marisamiller/GitHub/Projects/greed/greed.csproj",
+      "projectUniqueName": "C:\\Users\\maris\\OneDrive\\Documents\\Greed Game\\greed\\greed.csproj",
       "projectName": "greed",
-      "projectPath": "/Users/marisamiller/GitHub/Projects/greed/greed.csproj",
-      "packagesPath": "/Users/marisamiller/.nuget/packages/",
-      "outputPath": "/Users/marisamiller/GitHub/Projects/greed/obj/",
+      "projectPath": "C:\\Users\\maris\\OneDrive\\Documents\\Greed Game\\greed\\greed.csproj",
+      "packagesPath": "C:\\Users\\maris\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\maris\\OneDrive\\Documents\\Greed Game\\greed\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/marisamiller/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\maris\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
