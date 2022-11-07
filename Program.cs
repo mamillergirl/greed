@@ -10,7 +10,7 @@ namespace HelloWorld
 
             var ScreenHeight = 480;
             var ScreenWidth = 800;
-            var Objects = new List<GameObject>();
+            var Objects = new List<CollectibleObject>();
             var Random = new Random();
             var RectangleSize = 10;
             int TotalPoints = 300;
@@ -19,7 +19,7 @@ namespace HelloWorld
             var MovementSpeed = 4;
 
             Raylib.InitWindow(ScreenWidth, ScreenHeight, "GameObject");
-            Raylib.SetTargetFPS(60);
+            Raylib.SetTargetFPS(50);
 
             while (!Raylib.WindowShouldClose())
             {
@@ -32,8 +32,8 @@ namespace HelloWorld
                 //var whichType = numbers[randIndex];
                 var whichType = Random.Next(30);
                 // Generate a random velocity for this object
-                var randomY = Random.Next(0, 2);
-                var randomX = Random.Next(0, 2);
+                var randomY = Random.Next(1, 2);
+                var randomX = 0;
                 var randomXstart = Random.Next(ScreenWidth);
 
                 // Each object will start about the center of the screen
@@ -63,7 +63,7 @@ namespace HelloWorld
                         Objects.Add(middleRock);
                         break;
                     case 2:
-                        var babyRock = new BabyRock(Color.ORANGE, 30);
+                        var babyRock = new BabyRock(Color.ORANGE, 50);
                         babyRock.Position = position;
                         babyRock.Velocity = new Vector2(randomX, randomY);
                         Objects.Add(babyRock);
@@ -103,6 +103,15 @@ namespace HelloWorld
                 // Move all of the objects to their next location
                 foreach (var obj in Objects) {
                     obj.Move();
+                }
+                foreach (var obj in Objects.ToList()){
+
+                    var rectangle = new Rectangle(obj.Position.X, obj.Position.Y, 20, 20);
+
+                    if (Raylib.CheckCollisionRecs(PlayerRectangle, rectangle)) {
+                    TotalPoints += obj.Points;
+                    Objects.Remove(obj);}
+                
                 }
             }
 

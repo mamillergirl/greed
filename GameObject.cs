@@ -23,54 +23,65 @@ class ColoredObject: GameObject {
         Color = color;
     }
 }
+class CollectibleObject: ColoredObject{
+    public CollectibleObject(Color color):base(color){
+        
+    }
+    public int Points = 0;
+}
 
-class DaddyRock: ColoredObject {
+class DaddyRock: CollectibleObject {
     public int Size { get; set; }
-    public int Points = -50;
+    
 
     public DaddyRock(Color color, int size): base(color) {
         Size = size;
+        Points = -50;
     }
 
     override public void Draw() {
-        Raylib.DrawRectangle((int)Position.X, (int)Position.Y, Size, Size, Color);
+        Raylib.DrawText("O",(int)Position.X, (int)Position.Y, Size, Color);
+    
     }    }
 
-class MiddleRock: ColoredObject {
+class MiddleRock: CollectibleObject {
     public int Size { get; set; }
-    public int Points = -25;
+    
 
     public MiddleRock(Color color, int size): base(color) {
         Size = size;
+        Points = -25;
     }
 
     override public void Draw() {
-        Raylib.DrawRectangle((int)Position.X, (int)Position.Y, Size, Size, Color);
+        Raylib.DrawText("o",(int)Position.X, (int)Position.Y, Size, Color);
+
     }   
 }
 
-class BabyRock: ColoredObject {
+class BabyRock: CollectibleObject {
     public int Size { get; set; }
-    public int Points = -5;
 
     public BabyRock(Color color, int size): base(color) {
         Size = size;
+        Points = -5;
     }
 
     override public void Draw() {
-        Raylib.DrawRectangle((int)Position.X, (int)Position.Y, Size, Size, Color);
+        Raylib.DrawText(".",(int)Position.X, (int)Position.Y, Size, Color);
+
     }   
 }
-class Gem: ColoredObject {
+class Gem: CollectibleObject {
     public int Size { get; set; }
-    public int Points = 25;
 
     public Gem(Color color, int size): base(color) {
         Size = size;
+        Points = 25;
     }
 
     override public void Draw() {
-        Raylib.DrawRectangle((int)Position.X, (int)Position.Y, Size, Size, Color);
+        Raylib.DrawText("*",(int)Position.X, (int)Position.Y, Size, Color);
     }   
 }
 
