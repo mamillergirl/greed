@@ -1,4 +1,0 @@
-// class Player{
-//     string playerShape = "✪"
-
-// }
