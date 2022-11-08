@@ -33,7 +33,7 @@ namespace HelloWorld
                 var whichType = Random.Next(30);
                 // Generate a random velocity for this object
                 var randomY = Random.Next(1, 2);
-                var randomX = 0;
+               
                 var randomXstart = Random.Next(ScreenWidth);
 
                 // Each object will start about the center of the screen
@@ -52,26 +52,26 @@ namespace HelloWorld
                         
                         var daddyRock = new DaddyRock(Color.RED, 30);
                         daddyRock.Position = position;
-                        daddyRock.Velocity = new Vector2(randomX, randomY);
+                        daddyRock.Velocity = new Vector2(0, randomY);
                         Objects.Add(daddyRock);
                         break;
                     case 1:
                         
                         var middleRock = new MiddleRock(Color.YELLOW, 20);
                         middleRock.Position = position;
-                        middleRock.Velocity = new Vector2(randomX, randomY);
+                        middleRock.Velocity = new Vector2(0, randomY);
                         Objects.Add(middleRock);
                         break;
                     case 2:
-                        var babyRock = new BabyRock(Color.ORANGE, 50);
+                        var babyRock = new BabyRock(Color.ORANGE, 15);
                         babyRock.Position = position;
-                        babyRock.Velocity = new Vector2(randomX, randomY);
+                        babyRock.Velocity = new Vector2(0, randomY);
                         Objects.Add(babyRock);
                         break;
                     case 3:
                         var gem = new Gem(Color.BLUE, 20);
                         gem.Position = position;
-                        gem.Velocity = new Vector2(randomX, randomY);
+                        gem.Velocity = new Vector2(0, randomY);
                         Objects.Add(gem);
                         break;
                     default:
@@ -105,14 +105,27 @@ namespace HelloWorld
                     obj.Move();
                 }
                 foreach (var obj in Objects.ToList()){
-
-                    var rectangle = new Rectangle(obj.Position.X, obj.Position.Y, 20, 20);
+                    var size = 20;
+                    if (obj is DaddyRock){
+                        size = 30;
+                    }
+                   else if (obj is BabyRock){
+                        size = 15;
+                    }
+                    var rectangle = new Rectangle(obj.Position.X, obj.Position.Y, size, size);
 
                     if (Raylib.CheckCollisionRecs(PlayerRectangle, rectangle)) {
                     TotalPoints += obj.Points;
                     Objects.Remove(obj);}
-                
+
+                   
                 }
+                 if (TotalPoints <= 0){
+                        Raylib.ClearBackground(Color.BLACK);
+                        Raylib.DrawText("Game Over", ScreenWidth / 2, ScreenHeight / 2, 20, Color.WHITE);
+
+                        Raylib.CloseWindow();
+                    }
             }
 
             Raylib.CloseWindow();

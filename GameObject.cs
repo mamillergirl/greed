@@ -68,7 +68,7 @@ class BabyRock: CollectibleObject {
     }
 
     override public void Draw() {
-        Raylib.DrawText(".",(int)Position.X, (int)Position.Y, Size, Color);
+        Raylib.DrawText("o",(int)Position.X, (int)Position.Y, Size, Color);
 
     }   
 }
